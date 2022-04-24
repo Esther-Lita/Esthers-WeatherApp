@@ -1,0 +1,151 @@
+body {
+  font-family: "Playfair Display", serif;
+  padding: 200px 150px;
+  background: linear-gradient(to top, #34ace0 20%, #f7f1e3 100%);
+}
+
+h1 {
+  color: #227093;
+  font-size: 40px;
+  margin: 0;
+  line-height: 50px;
+}
+
+li {
+  color: #34ace0;
+  display: inline;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: all 150ms ease-in-out;
+}
+
+li:hover {
+  color: #227093;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+small {
+  text-align: center;
+  display: inline-block;
+  color: #227093;
+}
+
+.container {
+  max-width: 900px;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(to top, #34ace0 20%, #f7f1e3 100%);
+}
+
+.city-option {
+  list-style: none;
+  padding: 0;
+}
+
+.search-input {
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
+}
+
+.search-btn,
+.location-btn,
+.search-btn:hover {
+  display: inline-block;
+  margin: 0;
+  background: #34ace0;
+  border: 1px solid transparent;
+  transition: all 150ms ease-in-out;
+}
+
+.search-btn:hover,
+.location-btn:hover {
+  cursor: pointer;
+}
+
+.location-btn,
+.location-btn:hover {
+  background: #227093;
+}
+
+.weather {
+  padding: 30px 50px;
+}
+
+.current-city {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.current-info {
+  margin: 0;
+  font-size: 18px;
+  line-height: 15px;
+  color: #227093;
+  opacity: 0.4;
+}
+
+.units {
+  position: relative;
+  top: -20px;
+  font-size: 15px;
+  color: #227093;
+}
+
+.city-emoji {
+  font-size: 85px;
+  line-height: 95px;
+}
+
+.days-forecast {
+  padding-left: 55px;
+}
+
+.real-conditions {
+  position: relative;
+  top: 55px;
+}
+
+.current-day,
+.current-expected {
+  text-align: center;
+  font-size: 15px;
+  line-height: 15px;
+  color: #227093;
+  opacity: 0.6;
+}
+
+.current-emoji {
+  font-size: 35px;
+  text-align: center;
+}
+
+.day {
+  border-radius: 8px;
+  margin: 5px;
+  padding: 10px 15px;
+  transition: all 200ms ease-in-out;
+  border: 0.2px solid transparent; /* to prevent the layout shift */
+}
+
+.day:hover {
+  border: 0.2px solid #227093;
+  background: linear-gradient(to top, #34ace0, #f7f1e3);
+  cursor: pointer;
+}
+
+.temperature {
+  color: #227093;
+  font-size: 60px;
+  line-height: 60px;
+  margin-top: 20px;
+}
