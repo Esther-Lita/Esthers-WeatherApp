@@ -23,102 +23,113 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather">
-        <header>
-          <ul class="city-option">
-            <li>Madrid</li>
-            <li>Paris</li>
-            <li>New York</li>
-            <li>Tenerife</li>
-          </ul>
-        </header>
+      <div class="app-container">
+        <div class="weather">
+          <header>
+            <ul class="city-option">
+              <li>Madrid</li>
+              <li>Paris</li>
+              <li>New York</li>
+              <li>Tenerife</li>
+            </ul>
+          </header>
 
-        <form class="search-form" id="search-form">
-          <div class="row">
-            <div class="col-6">
-              <input
-                type="search"
-                placeholder="Type a city.."
-                autofocus="on"
-                autocomplete="off"
-                id="city-input"
-                class="form-control shadow-sm search-input"
-              />
-            </div>
-            <div class="col-sm-2">
-              <input
-                type="submit"
-                id="search-btn"
-                value="Search"
-                class="form-control btn btn-primary shadow-sm search-btn"
-              />
-            </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Current Location"
-                id="current-location-btn"
-                class="form-control btn btn-primary shadow-sm location-btn"
-              />
-            </div>
-          </div>
-        </form>
-
-        <div class="current-city">
-          <div class="row">
-            <div class="col-4">
-              <h1 id="city"></h1>
-              <div id="weather-conditions" class="current-info"></div>
-              <div class="current-info">
-                Max:<span id="max-temp"></span>º Min:<span id="min-temp"></span
-                >º
+          <form class="search-form" id="search-form">
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="search"
+                  placeholder="Type a city.."
+                  autofocus="on"
+                  autocomplete="off"
+                  id="city-input"
+                  class="form-control shadow-sm search-input"
+                />
               </div>
-              <span class="temperature" id="displayed-temperature"></span>
-              <span class="units">ºC</span>
+              <div class="col-sm-2">
+                <input
+                  type="submit"
+                  id="search-btn"
+                  value="Search"
+                  class="form-control btn btn-primary shadow-sm search-btn"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Current Location"
+                  id="current-location-btn"
+                  class="form-control btn btn-primary shadow-sm location-btn"
+                />
+              </div>
             </div>
-            <div class="col-4">
-              <div class="real-conditions">
-                <div class="current-info" id="real-date"></div>
+          </form>
+
+          <div class="current-city">
+            <div class="row">
+              <div class="col-4">
+                <h1 id="city"></h1>
+                <div id="weather-conditions" class="current-info"></div>
                 <div class="current-info">
-                  Humidity: <span id="humidity"></span>
+                  Max:<span id="max-temp"></span>º Min:<span
+                    id="min-temp"
+                  ></span
+                  >º
                 </div>
-                <div class="current-info">Wind: <span id="wind"></span></div>
+                <span class="temperature" id="displayed-temperature"></span>
+                <span class="units">ºC</span>
+              </div>
+              <div class="col-4">
+                <div class="real-conditions">
+                  <div class="current-info" id="real-date"></div>
+                  <div class="current-info">
+                    Humidity: <span id="humidity"></span>
+                  </div>
+                  <div class="current-info">Wind: <span id="wind"></span></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row days-forecast">
-        <div class="col-sm-2 day">
-          <div class="current-day">Mon</div>
-          <div class="current-emoji">🌤️</div>
-          <div class="current-expected">16º/20º</div>
-        </div>
-        <div class="col-sm-2 day">
-          <div class="current-day">Tues</div>
-          <div class="current-emoji">🌦️</div>
-          <div class="current-expected">15º/19º</div>
-        </div>
-        <div class="col-sm-2 day">
-          <div class="current-day">Wed</div>
-          <div class="current-emoji">🌤️</div>
-          <div class="current-expected">15º/21º</div>
-        </div>
-        <div class="col-sm-2 day">
-          <div class="current-day">Thurs</div>
-          <div class="current-emoji">🌤️</div>
-          <div class="current-expected">16º/21º</div>
-        </div>
-        <div class="col-sm-2 day">
-          <div class="current-day">Fri</div>
-          <div class="current-emoji">🌤️</div>
-          <div class="current-expected">15º/21º</div>
+        <div class="row days-forecast">
+          <div class="col-sm-2 day">
+            <div class="current-day">Mon</div>
+            <div class="current-emoji">🌤️</div>
+            <div class="current-expected">16º/20º</div>
+          </div>
+          <div class="col-sm-2 day">
+            <div class="current-day">Tues</div>
+            <div class="current-emoji">🌦️</div>
+            <div class="current-expected">15º/19º</div>
+          </div>
+          <div class="col-sm-2 day">
+            <div class="current-day">Wed</div>
+            <div class="current-emoji">🌤️</div>
+            <div class="current-expected">15º/21º</div>
+          </div>
+          <div class="col-sm-2 day">
+            <div class="current-day">Thurs</div>
+            <div class="current-emoji">🌤️</div>
+            <div class="current-expected">16º/21º</div>
+          </div>
+          <div class="col-sm-2 day">
+            <div class="current-day">Fri</div>
+            <div class="current-emoji">🌤️</div>
+            <div class="current-expected">15º/21º</div>
+          </div>
         </div>
       </div>
-      <small>Coded by: Esthel Lizardo</small>
+      <footer>
+        <a
+          href="https://github.com/litaesther10/Esthers-WeatherApp"
+          target="_blank"
+          class="code-link"
+          >open-source code
+        </a>
+        by: Esthel Lizardo
+      </footer>
     </div>
-
     <script src="src/my-script.js"></script>
   </body>
 </html>

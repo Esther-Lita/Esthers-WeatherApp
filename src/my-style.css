@@ -25,25 +25,30 @@ li:hover {
   cursor: pointer;
 }
 
-small {
+footer {
+  font-size: 15px;
   text-align: center;
-  display: inline-block;
   color: #227093;
 }
 
 .container {
-  max-width: 900px;
+  max-width: 950px;
 }
 
 .container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-bottom: 150px;
+}
+
+.app-container {
+  max-width: 100%;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
   border-radius: 30px;
-  border: none;
+
   background: linear-gradient(to top, #34ace0 20%, #f7f1e3 100%);
+  padding: 10px 15px;
 }
 
 .city-option {
@@ -78,7 +83,7 @@ small {
 }
 
 .weather {
-  padding: 30px 50px;
+  padding: 30px 25px;
 }
 
 .current-city {
@@ -89,7 +94,7 @@ small {
 .current-info {
   margin: 0;
   font-size: 18px;
-  line-height: 15px;
+  line-height: 20px;
   color: #227093;
   opacity: 0.4;
 }
@@ -148,4 +153,15 @@ small {
   font-size: 60px;
   line-height: 60px;
   margin-top: 20px;
+}
+
+.code-link {
+  color: #2c2c54;
+  text-decoration: none;
+}
+
+.code-link:hover {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #2c2c54;
 }
