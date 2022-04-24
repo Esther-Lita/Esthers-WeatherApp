@@ -46,7 +46,6 @@ footer {
   max-width: 100%;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
   border-radius: 30px;
-
   background: linear-gradient(to top, #34ace0 20%, #f7f1e3 100%);
   padding: 10px 15px;
 }
