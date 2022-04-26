@@ -27,10 +27,10 @@
         <div class="weather">
           <header>
             <ul class="city-option">
-              <li>Madrid</li>
-              <li>Paris</li>
-              <li>New York</li>
-              <li>Tenerife</li>
+              <li class="city-link">Madrid</li>
+              <li class="city-link">Paris</li>
+              <li class="city-link">New York</li>
+              <li class="city-link">Tenerife</li>
             </ul>
           </header>
 
@@ -64,7 +64,6 @@
               </div>
             </div>
           </form>
-
           <div class="current-city">
             <div class="row">
               <div class="col-4">
@@ -79,16 +78,25 @@
                 <span class="temperature" id="displayed-temperature"></span>
                 <span class="units">ºC</span>
               </div>
-              <div class="col-4">
-                <div class="real-conditions">
-                  <div class="current-info" id="real-date"></div>
-                  <div class="current-info">
-                    Humidity: <span id="humidity"></span>%
-                  </div>
-                  <div class="current-info">
-                    Wind: <span id="wind"></span>m/s
-                  </div>
+              <div class="col-3">
+                <div id="weather-emoji">
+                  <img
+                    src="icons/sun/sunny.png"
+                    alt="sunny emoji"
+                    class="weather-emoji"
+                  />
                 </div>
+              </div>
+              <div class="col-3">
+                <ul class="real-conditions">
+                  <li class="current-info" id="real-date"></li>
+                  <li class="current-info">
+                    Humidity: <span id="humidity"></span>%
+                  </li>
+                  <li class="current-info">
+                    Wind: <span id="wind"></span> m/s
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -96,29 +104,45 @@
 
         <div class="row days-forecast">
           <div class="col-sm-2 day">
-            <div class="current-day">Mon</div>
-            <div class="current-emoji">🌤️</div>
-            <div class="current-expected">16º/20º</div>
+            <div class="expected-day">Mon</div>
+            <img
+              src="icons/sun/27.png"
+              alt="semi clouded"
+              class="expected-temp-emoji"
+            />
+            <div class="expected-temp">16º/20º</div>
           </div>
           <div class="col-sm-2 day">
-            <div class="current-day">Tues</div>
-            <div class="current-emoji">🌦️</div>
-            <div class="current-expected">15º/19º</div>
+            <div class="expected-day">Tues</div>
+            <img src="icons/sun/8.png" class="expected-temp-emoji" />
+            <div class="expected-temp">15º/19º</div>
           </div>
           <div class="col-sm-2 day">
-            <div class="current-day">Wed</div>
-            <div class="current-emoji">🌤️</div>
-            <div class="current-expected">15º/21º</div>
+            <div class="expected-day">Wed</div>
+            <img
+              src="icons/sun/27.png"
+              alt="semi clouded"
+              class="expected-temp-emoji"
+            />
+            <div class="expected-temp">15º/21º</div>
           </div>
           <div class="col-sm-2 day">
-            <div class="current-day">Thurs</div>
-            <div class="current-emoji">🌤️</div>
-            <div class="current-expected">16º/21º</div>
+            <div class="expected-day">Thurs</div>
+            <img
+              src="icons/sun/27.png"
+              alt="semi clouded"
+              class="expected-temp-emoji"
+            />
+            <div class="expected-temp">16º/21º</div>
           </div>
           <div class="col-sm-2 day">
-            <div class="current-day">Fri</div>
-            <div class="current-emoji">🌤️</div>
-            <div class="current-expected">15º/21º</div>
+            <div class="expected-day">Fri</div>
+            <img
+              src="icons/sun/27.png"
+              alt="semi clouded"
+              class="expected-temp-emoji"
+            />
+            <div class="expected-temp">15º/21º</div>
           </div>
         </div>
       </div>

@@ -11,20 +11,6 @@ h1 {
   line-height: 50px;
 }
 
-li {
-  color: #34ace0;
-  display: inline;
-  margin: 0 10px;
-  font-size: 20px;
-  transition: all 150ms ease-in-out;
-}
-
-li:hover {
-  color: #227093;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 footer {
   font-size: 15px;
   text-align: center;
@@ -32,7 +18,7 @@ footer {
 }
 
 .container {
-  max-width: 950px;
+  max-width: 1200px;
 }
 
 .container {
@@ -43,11 +29,26 @@ footer {
 }
 
 .app-container {
-  max-width: 100%;
+  max-width: 950px;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
   border-radius: 30px;
   background: linear-gradient(to top, #34ace0 20%, #f7f1e3 100%);
   padding: 10px 15px;
+  margin-left: 110px;
+}
+
+.city-link {
+  color: #34ace0;
+  display: inline;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: all 150ms ease-in-out;
+}
+
+.city-link:hover {
+  color: #227093;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .city-option {
@@ -105,32 +106,29 @@ footer {
   color: #227093;
 }
 
-.city-emoji {
-  font-size: 85px;
-  line-height: 95px;
-}
-
 .days-forecast {
   padding-left: 55px;
 }
 
 .real-conditions {
-  position: relative;
-  top: 55px;
+  list-style: none;
+  margin-top: 115px;
+  padding: 0;
 }
 
-.current-day,
-.current-expected {
+.expected-day,
+.expected-temp {
   text-align: center;
-  font-size: 15px;
+  font-size: 20x;
   line-height: 15px;
   color: #227093;
   opacity: 0.6;
 }
 
-.current-emoji {
-  font-size: 35px;
-  text-align: center;
+.expected-temp-emoji {
+  display: block;
+  margin: auto;
+  width: 70px;
 }
 
 .day {
@@ -163,4 +161,9 @@ footer {
   text-decoration: underline;
   font-weight: bold;
   color: #2c2c54;
+}
+
+.weather-emoji {
+  display: block;
+  width: 200px;
 }
