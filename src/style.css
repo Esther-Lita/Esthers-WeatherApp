@@ -1,7 +1,20 @@
 body {
   font-family: "Playfair Display", serif;
   padding: 200px 150px;
-  background: linear-gradient(to top, #34ace0 20%, #f7f1e3 100%);
+  background-image: linear-gradient(
+    175deg,
+    hsl(42deg 56% 93%) 0%,
+    hsl(41deg 83% 89%) 10%,
+    hsl(41deg 94% 86%) 18%,
+    hsl(42deg 98% 82%) 26%,
+    hsl(43deg 100% 78%) 33%,
+    hsl(43deg 100% 74%) 41%,
+    hsl(46deg 62% 73%) 49%,
+    hsl(59deg 24% 72%) 57%,
+    hsl(169deg 15% 70%) 66%,
+    hsl(198deg 44% 65%) 77%,
+    hsl(198deg 74% 54%) 100%
+  );
 }
 
 h1 {
@@ -32,7 +45,20 @@ footer {
   max-width: 950px;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
   border-radius: 30px;
-  background: linear-gradient(to top, #34ace0 20%, #f7f1e3 100%);
+  background-image: linear-gradient(
+    175deg,
+    hsl(42deg 56% 93%) 0%,
+    hsl(41deg 83% 89%) 10%,
+    hsl(41deg 94% 86%) 18%,
+    hsl(42deg 98% 82%) 26%,
+    hsl(43deg 100% 78%) 33%,
+    hsl(43deg 100% 74%) 41%,
+    hsl(46deg 62% 73%) 49%,
+    hsl(59deg 24% 72%) 57%,
+    hsl(169deg 15% 70%) 66%,
+    hsl(198deg 44% 65%) 77%,
+    hsl(198deg 74% 54%) 100%
+  );
   padding: 10px 15px;
   margin-left: 110px;
 }
