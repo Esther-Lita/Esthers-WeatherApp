@@ -21,8 +21,57 @@ function getCurrentDate() {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+  console.log(hours);
 
   return `${day} ${hours}:${minutes}`;
+}
+
+function dayTimeIcon(response) {
+  let description = response.data.weather[0].main;
+
+  if (description === "Clear") {
+    return `icons/sun/sunny.png`;
+  } else {
+    if (description === "Clouds") {
+      return `icons/sun/partly_cloudy.png`;
+    } else {
+      if (description === "Mist") {
+        return `icons/sun/mist.png`;
+      } else {
+        if (description === "Rain") {
+          return `icons/sun/day_rain.png`;
+        } else {
+          if (description === "snow") {
+            return `icons/sun/day_snow.png`;
+          }
+        }
+      }
+    }
+  }
+}
+
+function nightTimeIcon(response) {
+  let description = response.data.weather[0].main;
+
+  if (description === "Clear") {
+    return `icons/moon/clear_night.png`;
+  } else {
+    if (description === "Clouds") {
+      return `icons/moon/clouds_night.png`;
+    } else {
+      if (description === "Mist") {
+        return `icons/moon/mist.png`;
+      } else {
+        if (description === "Rain") {
+          return `icons/moon/night_rain.png`;
+        } else {
+          if (description === "snow") {
+            return `icons/moon/night_snow.png`;
+          }
+        }
+      }
+    }
+  }
 }
 
 function displaySearchedTemp(response) {
@@ -43,6 +92,10 @@ function displaySearchedTemp(response) {
   document.querySelector("#min-temp").innerHTML = Math.round(
     response.data.main.temp_min
   );
+
+  let weatherIcon = document.querySelector("#weather-emoji");
+  weatherIcon.setAttribute("alt", response.data.weather[0].main);
+  weatherIcon.setAttribute("src", dayTimeIcon(response));
 }
 
 function searchCity(city) {
