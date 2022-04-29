@@ -1,20 +1,6 @@
 body {
   font-family: "Playfair Display", serif;
   padding: 200px 150px;
-  background-image: linear-gradient(
-    175deg,
-    hsl(42deg 56% 93%) 0%,
-    hsl(41deg 83% 89%) 10%,
-    hsl(41deg 94% 86%) 18%,
-    hsl(42deg 98% 82%) 26%,
-    hsl(43deg 100% 78%) 33%,
-    hsl(43deg 100% 74%) 41%,
-    hsl(46deg 62% 73%) 49%,
-    hsl(59deg 24% 72%) 57%,
-    hsl(169deg 15% 70%) 66%,
-    hsl(198deg 44% 65%) 77%,
-    hsl(198deg 74% 54%) 100%
-  );
 }
 
 h1 {
@@ -41,10 +27,7 @@ footer {
   margin-bottom: 150px;
 }
 
-.app-container {
-  max-width: 950px;
-  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
-  border-radius: 30px;
+.day-time {
   background-image: linear-gradient(
     175deg,
     hsl(42deg 56% 93%) 0%,
@@ -59,6 +42,27 @@ footer {
     hsl(198deg 44% 65%) 77%,
     hsl(198deg 74% 54%) 100%
   );
+}
+
+.night-time {
+  background-image: linear-gradient(
+    210deg,
+    hsl(42deg 7% 64%) 0%,
+    hsl(25deg 12% 64%) 21%,
+    hsl(6deg 17% 64%) 30%,
+    hsl(348deg 22% 64%) 39%,
+    hsl(331deg 28% 64%) 46%,
+    hsl(312deg 32% 64%) 54%,
+    hsl(294deg 38% 64%) 61%,
+    hsl(276deg 43% 63%) 69%,
+    hsl(259deg 48% 63%) 79%,
+    hsl(241deg 53% 63%) 100%
+  );
+}
+.app-container {
+  max-width: 950px;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
+  border-radius: 30px;
   padding: 10px 15px;
   margin: 0 auto;
 }
@@ -112,7 +116,6 @@ footer {
   color: #227093;
 }
 
-
 .active {
   color: #227093;
   cursor: default;
@@ -158,7 +161,9 @@ footer {
 
 .day:hover {
   border: 0.2px solid #227093;
-  background: linear-gradient(to top, #34ace0, #f7f1e3);
+  -webkit-backdrop-filter: blur(8px); /* Safari 9+ */
+  backdrop-filter: blur(8px); /* Chrome and Opera */
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08);
   cursor: pointer;
 }
 

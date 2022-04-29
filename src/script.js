@@ -12,7 +12,7 @@ function getCurrentDate() {
   ];
 
   let day = days[currentTime.getDay()];
-  let hours = currentTime.getHours();
+  hours = currentTime.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
@@ -25,26 +25,216 @@ function getCurrentDate() {
   return `${day} ${hours}:${minutes}`;
 }
 
-function dayTimeIcon(response) {
-  let description = response.data.weather[0].main;
-
-  if (description === "Clear") {
-    return `icons/sun/sunny.png`;
+function showIcon() {
+  if (weatherDescription === "Clear" && hours >= 19) {
+    return `icons/moon/clear_night.png`;
   } else {
-    if (description === "Clouds") {
-      return `icons/sun/partly_cloudy.png`;
+    if (weatherDescription === "Clear" && hours <= 06) {
+      return `icons/moon/clear_night.png`;
     } else {
-      if (description === "Mist") {
-        return `icons/sun/mist.png`;
-      } else {
-        if (description === "Rain") {
-          return `icons/sun/day_rain.png`;
-        } else {
-          if (description === "snow") {
-            return `icons/sun/day_snow.png`;
-          }
-        }
+      if (weatherDescription === "Clear" && hours > 06) {
+        return `icons/sun/sunny.png`;
       }
+    }
+  }
+
+  if (weatherDescription === "Clouds" && hours >= 19) {
+    return `icons/moon/clouds_night.png`;
+  } else {
+    if (weatherDescription === "Clouds" && hours <= 06) {
+      return `icons/moon/clouds_night.png`;
+    } else {
+      if (weatherDescription === "Clouds" && hours > 06) {
+        return `icons/sun/partly_cloudy.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Mist" && hours >= 19) {
+    return `icons/moon/mist.png`;
+  } else {
+    if (weatherDescription === "Mist" && hours <= 06) {
+      return `icons/moon/mist.png`;
+    } else {
+      if (weatherDescription === "Mist" && hours > 06) {
+        return `icons/sun/mist.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Haze" && hours >= 19) {
+    return `icons/moon/mist.png`;
+  } else {
+    if (weatherDescription === "Haze" && hours <= 06) {
+      return `icons/moon/mist.png`;
+    } else {
+      if (weatherDescription === "Haze" && hours > 06) {
+        return `icons/sun/mist.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Fog" && hours >= 19) {
+    return `icons/moon/mist.png`;
+  } else {
+    if (weatherDescription === "Fog" && hours <= 06) {
+      return `icons/moon/mist.png`;
+    } else {
+      if (weatherDescription === "Fog" && hours > 06) {
+        return `icons/sun/mist.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Drizzel" && hours >= 19) {
+    return `icons/moon/drizzel_night.png`;
+  } else {
+    if (weatherDescription === "Drizzel" && hours <= 06) {
+      return `icons/moon/drizzel_night.png`;
+    } else {
+      if (weatherDescription === "Drizzel" && hours > 06) {
+        return `icons/sun/drizzel_day.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Smoke" && hours >= 19) {
+    return `icons/moon/smoke_night.png`;
+  } else {
+    if (weatherDescription === "Smoke" && hours <= 06) {
+      return `icons/moon/smoke_night.png`;
+    } else {
+      if (weatherDescription === "Smoke" && hours > 06) {
+        return `icons/sun/fog.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Dust" && hours >= 19) {
+    return `icons/moon/smoke_night.png`;
+  } else {
+    if (weatherDescription === "Dust" && hours <= 06) {
+      return `icons/moon/smoke_night.png`;
+    } else {
+      if (weatherDescription === "Dust" && hours > 06) {
+        return `icons/sun/fog.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Sand" && hours >= 19) {
+    return `icons/moon/smoke_night.png`;
+  } else {
+    if (weatherDescription === "Sand" && hours <= 06) {
+      return `icons/moon/smoke_night.png`;
+    } else {
+      if (weatherDescription === "Sand" && hours > 06) {
+        return `icons/sun/fog.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Ash" && hours >= 19) {
+    return `icons/moon/smoke_night.png`;
+  } else {
+    if (weatherDescription === "Ash" && hours <= 06) {
+      return `icons/moon/smoke_night.png`;
+    } else {
+      if (weatherDescription === "Ash" && hours > 06) {
+        return `icons/sun/fog.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Squall" && hours >= 19) {
+    return `icons/moon/squall_night.png`;
+  } else {
+    if (weatherDescription === "Squall" && hours <= 06) {
+      return `icons/moon/squall_night.png`;
+    } else {
+      if (weatherDescription === "Squall" && hours > 06) {
+        return `icons/sun/day_storm.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Tornado" && hours >= 19) {
+    return `icons/moon/squall_night.png`;
+  } else {
+    if (weatherDescription === "Tornado" && hours <= 06) {
+      return `icons/moon/squall_night.png`;
+    } else {
+      if (weatherDescription === "Tornado" && hours > 06) {
+        return `icons/sun/day_storm.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Snow" && hours >= 19) {
+    return `icons/moon/night_snow.png`;
+  } else {
+    if (weatherDescription === "Snow" && hours <= 06) {
+      return `icons/moon/night_snow.png`;
+    } else {
+      if (weatherDescription === "Snow" && hours > 06) {
+        return `icons/sun/day_snow.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Rain" && hours >= 19) {
+    return `icons/cloud/rain.png`;
+  } else {
+    if (weatherDescription === "Rain" && hours <= 06) {
+      return `icons/cloud/rain.png`;
+    } else {
+      if (weatherDescription === "Rain" && hours > 06) {
+        return `icons/cloud/rain.png`;
+      }
+    }
+  }
+
+  if (weatherDescription === "Thunderstorm" && hours >= 19) {
+    return `icons/moon/thundrestorm_night.png`;
+  } else {
+    if (weatherDescription === "Thunderstorm" && hours <= 06) {
+      return `icons/moon/thundrestorm_night.png`;
+    } else {
+      if (weatherDescription === "Thunderstorm" && hours > 06) {
+        return `icons/sun/thunderstorm.png`;
+      }
+    }
+  }
+}
+
+function changeBackgroundColor() {
+  let bodyElement = document.querySelector("#body");
+  let containerElement = document.querySelector("#app-container");
+  if (hours > 19) {
+    bodyElement.classList.remove("day-time");
+    containerElement.classList.remove("day-time");
+    bodyElement.classList.add("night-time");
+    containerElement.classList.add("night-time");
+  } else {
+    if (hours < 19) {
+      bodyElement.classList.remove("night-time");
+      containerElement.classList.remove("night-time");
+      bodyElement.classList.add("day-time");
+      containerElement.classList.add("day-time");
+    }
+  }
+
+  if (hours < 06) {
+    bodyElement.classList.remove("day-time");
+    containerElement.classList.remove("day-time");
+    bodyElement.classList.add("night-time");
+    containerElement.classList.add("night-time");
+  } else {
+    if (hours > 06) {
+      bodyElement.classList.remove("night-time");
+      containerElement.classList.remove("night-time");
+      bodyElement.classList.add("day-time");
+      containerElement.classList.add("day-time");
     }
   }
 }
@@ -59,18 +249,17 @@ function displaySearchedTemp(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  document.querySelector("#weather-conditions").innerHTML =
-    response.data.weather[0].main;
+  weatherDescription = response.data.weather[0].main;
+  document.querySelector("#weather-conditions").innerHTML = weatherDescription;
   document.querySelector("#max-temp").innerHTML = Math.round(
     response.data.main.temp_max
   );
   document.querySelector("#min-temp").innerHTML = Math.round(
     response.data.main.temp_min
   );
-
   let weatherIcon = document.querySelector("#weather-emoji");
-  weatherIcon.setAttribute("alt", response.data.weather[0].main);
-  weatherIcon.setAttribute("src", dayTimeIcon(response));
+  weatherIcon.setAttribute("alt", weatherDescription);
+  weatherIcon.setAttribute("src", showIcon());
 }
 
 function searchCity(city) {
@@ -115,6 +304,12 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+let weatherDescription = null;
+let celsiusTemperature = null;
+let hours = null;
+
+changeBackgroundColor();
+
 let dateElement = document.querySelector("#real-date");
 let currentTime = new Date();
 dateElement.innerHTML = getCurrentDate(currentTime);
@@ -124,8 +319,6 @@ searchBtn.addEventListener("submit", handleSubmit);
 
 let currentLocationBtn = document.querySelector("#current-location-btn");
 currentLocationBtn.addEventListener("click", getGeolocation);
-
-let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
