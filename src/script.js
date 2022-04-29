@@ -21,7 +21,6 @@ function getCurrentDate() {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  console.log(hours);
 
   return `${day} ${hours}:${minutes}`;
 }
@@ -50,35 +49,11 @@ function dayTimeIcon(response) {
   }
 }
 
-function nightTimeIcon(response) {
-  let description = response.data.weather[0].main;
-
-  if (description === "Clear") {
-    return `icons/moon/clear_night.png`;
-  } else {
-    if (description === "Clouds") {
-      return `icons/moon/clouds_night.png`;
-    } else {
-      if (description === "Mist") {
-        return `icons/moon/mist.png`;
-      } else {
-        if (description === "Rain") {
-          return `icons/moon/night_rain.png`;
-        } else {
-          if (description === "snow") {
-            return `icons/moon/night_snow.png`;
-          }
-        }
-      }
-    }
-  }
-}
-
 function displaySearchedTemp(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#displayed-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector("#displayed-temperature").innerHTML =
+    Math.round(celsiusTemperature);
 
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
@@ -122,6 +97,24 @@ function getGeolocation(event) {
   navigator.geolocation.getCurrentPosition(findLocation);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#displayed-temperature");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#displayed-temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
 let dateElement = document.querySelector("#real-date");
 let currentTime = new Date();
 dateElement.innerHTML = getCurrentDate(currentTime);
@@ -131,5 +124,13 @@ searchBtn.addEventListener("submit", handleSubmit);
 
 let currentLocationBtn = document.querySelector("#current-location-btn");
 currentLocationBtn.addEventListener("click", getGeolocation);
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Arrecife");

@@ -21,19 +21,10 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
   </head>
-  <body>
-    <div class="container">
-      <div class="app-container">
+  <body id="body">
+    <div class="container" id="container">
+      <div class="app-container" id="app-container">
         <div class="weather">
-          <header>
-            <ul class="city-option">
-              <li class="city-link">Madrid</li>
-              <li class="city-link">Paris</li>
-              <li class="city-link">New York</li>
-              <li class="city-link">Tenerife</li>
-            </ul>
-          </header>
-
           <form class="search-form" id="search-form">
             <div class="row">
               <div class="col-6">
@@ -51,7 +42,7 @@
                   type="submit"
                   id="search-btn"
                   value="Search"
-                  class="form-control btn btn-primary shadow-sm search-btn"
+                  class="form-control btn shadow-sm search-btn"
                 />
               </div>
               <div class="col-3">
@@ -59,7 +50,7 @@
                   type="submit"
                   value="Current Location"
                   id="current-location-btn"
-                  class="form-control btn btn-primary shadow-sm location-btn"
+                  class="form-control btn shadow-sm location-btn"
                 />
               </div>
             </div>
@@ -76,7 +67,10 @@
                   >º
                 </div>
                 <span class="temperature" id="displayed-temperature"></span>
-                <span class="units">ºC</span>
+                <span class="units">
+                  <a href="#" class="active links" id="celsius-link"> ºC</a> |
+                  <a href="#" class="links" id="fahrenheit-link">ºF</a>
+                </span>
               </div>
               <div class="col-3">
                 <div>
@@ -95,7 +89,7 @@
                     Humidity: <span id="humidity"></span>%
                   </li>
                   <li class="current-info">
-                    Wind: <span id="wind"></span> m/s
+                    Wind: <span id="wind"></span> M/S
                   </li>
                 </ul>
               </div>

@@ -60,51 +60,31 @@ footer {
     hsl(198deg 74% 54%) 100%
   );
   padding: 10px 15px;
-  margin-left: 110px;
-}
-
-.city-link {
-  color: #34ace0;
-  display: inline;
-  margin: 0 10px;
-  font-size: 20px;
-  transition: all 150ms ease-in-out;
-}
-
-.city-link:hover {
-  color: #227093;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.city-option {
-  list-style: none;
-  padding: 0;
+  margin: 0 auto;
 }
 
 .search-input {
-  border-radius: 2px;
+  border-radius: 8px;
   border: none;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
 }
 
 .search-btn,
 .location-btn,
-.search-btn:hover {
+.search-btn:hover,
+.location-btn:hover {
   display: inline-block;
   margin: 0;
   background: #34ace0;
+  color: white;
   border: 1px solid transparent;
   transition: all 150ms ease-in-out;
+  border-radius: 8px;
 }
 
 .search-btn:hover,
 .location-btn:hover {
   cursor: pointer;
-}
-
-.location-btn,
-.location-btn:hover {
   background: #227093;
 }
 
@@ -119,10 +99,10 @@ footer {
 
 .current-info {
   margin: 0;
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 22px;
+  line-height: 25px;
   color: #227093;
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .units {
@@ -130,6 +110,17 @@ footer {
   top: -20px;
   font-size: 15px;
   color: #227093;
+}
+
+
+.active {
+  color: #227093;
+  cursor: default;
+}
+
+.links,
+.active:hover {
+  text-decoration: none;
 }
 
 .days-forecast {
@@ -145,8 +136,8 @@ footer {
 .expected-day,
 .expected-temp {
   text-align: center;
-  font-size: 20x;
-  line-height: 15px;
+  font-size: 20px;
+  line-height: 25px;
   color: #227093;
   opacity: 0.6;
 }
