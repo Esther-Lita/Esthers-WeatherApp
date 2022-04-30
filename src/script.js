@@ -135,10 +135,10 @@ function showIcon() {
   }
 
   if (weatherDescription === "Ash" && hours >= 19) {
-    return `icons/moon/smoke_night.png`;
+    return `icons/moon/fog_night.png`;
   } else {
     if (weatherDescription === "Ash" && hours <= 06) {
-      return `icons/moon/smoke_night.png`;
+      return `icons/moon/fog_night.png`;
     } else {
       if (weatherDescription === "Ash" && hours > 06) {
         return `icons/sun/fog.png`;
@@ -147,25 +147,25 @@ function showIcon() {
   }
 
   if (weatherDescription === "Squall" && hours >= 19) {
-    return `icons/moon/squall_night.png`;
+    return `icons/cloud/squall.png`;
   } else {
     if (weatherDescription === "Squall" && hours <= 06) {
-      return `icons/moon/squall_night.png`;
+      return `icons/cloud/squall.png`;
     } else {
       if (weatherDescription === "Squall" && hours > 06) {
-        return `icons/sun/day_storm.png`;
+        return `icons/cloud/squall.png`;
       }
     }
   }
 
   if (weatherDescription === "Tornado" && hours >= 19) {
-    return `icons/moon/squall_night.png`;
+    return `icons/cloud/squall.png`;
   } else {
     if (weatherDescription === "Tornado" && hours <= 06) {
-      return `icons/moon/squall_night.png`;
+      return `icons/cloud/squall.png`;
     } else {
       if (weatherDescription === "Tornado" && hours > 06) {
-        return `icons/sun/day_storm.png`;
+        return `icons/cloud/squall.png`;
       }
     }
   }
@@ -224,13 +224,13 @@ function changeBackgroundColor() {
     }
   }
 
-  if (hours < 06) {
+  if (hours <= 07) {
     bodyElement.classList.remove("day-time");
     containerElement.classList.remove("day-time");
     bodyElement.classList.add("night-time");
     containerElement.classList.add("night-time");
   } else {
-    if (hours > 06) {
+    if (hours > 07) {
       bodyElement.classList.remove("night-time");
       containerElement.classList.remove("night-time");
       bodyElement.classList.add("day-time");
@@ -308,8 +308,6 @@ let weatherDescription = null;
 let celsiusTemperature = null;
 let hours = null;
 
-changeBackgroundColor();
-
 let dateElement = document.querySelector("#real-date");
 let currentTime = new Date();
 dateElement.innerHTML = getCurrentDate(currentTime);
@@ -327,3 +325,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Arrecife");
+changeBackgroundColor();
