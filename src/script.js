@@ -221,20 +221,20 @@ function changeBackgroundColor() {
       containerElement.classList.remove("night-time");
       bodyElement.classList.add("day-time");
       containerElement.classList.add("day-time");
-    }
-  }
-
-  if (hours <= 07) {
-    bodyElement.classList.remove("day-time");
-    containerElement.classList.remove("day-time");
-    bodyElement.classList.add("night-time");
-    containerElement.classList.add("night-time");
-  } else {
-    if (hours > 07) {
-      bodyElement.classList.remove("night-time");
-      containerElement.classList.remove("night-time");
-      bodyElement.classList.add("day-time");
-      containerElement.classList.add("day-time");
+    } else {
+      if (hours <= 07) {
+        bodyElement.classList.remove("day-time");
+        containerElement.classList.remove("day-time");
+        bodyElement.classList.add("night-time");
+        containerElement.classList.add("night-time");
+      } else {
+        if (hours > 07) {
+          bodyElement.classList.remove("night-time");
+          containerElement.classList.remove("night-time");
+          bodyElement.classList.add("day-time");
+          containerElement.classList.add("day-time");
+        }
+      }
     }
   }
 }
