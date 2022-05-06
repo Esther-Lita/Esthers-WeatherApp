@@ -210,7 +210,7 @@ function showIcon() {
 function changeBackgroundColor() {
   let bodyElement = document.querySelector("#body");
   let containerElement = document.querySelector("#app-container");
-  if (hours > 19) {
+  if (hours >= 19) {
     bodyElement.classList.remove("day-time");
     containerElement.classList.remove("day-time");
     bodyElement.classList.add("night-time");
@@ -239,6 +239,72 @@ function changeBackgroundColor() {
   }
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  return days[day];
+}
+
+function forecastIcon(weather) {
+  if (weather === "Clouds") {
+    return ` <img src="icons/sun/partly_cloudy.png" alt="clouded" class="expected-temp-emoji" />`;
+  } else {
+    if (weather === "Clear") {
+      return ` <img src="icons/sun/sunny.png" alt="semi clouded" class="expected-temp-emoji" />`;
+    } else {
+      if (weather === "Rain") {
+        return `  <img src="icons/cloud/rain.png" alt="semi clouded" class="expected-temp-emoji" />`;
+      } else {
+        if (weather === "Snow") {
+          return `  <img src="icons/cloud/snow.png" alt="semi clouded" class="expected-temp-emoji" />`;
+        } else {
+          if (weather === "Thunderstorm") {
+            return `  <img src="icons/cloud/thunderstorm.png" alt="semi clouded" class="expected-temp-emoji" />`;
+          }
+        }
+      }
+    }
+  }
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#daily-forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+         <div class="col-sm-2 day">
+              <div class="expected-day">${formatDay(forecastDay.dt)}</div>
+              <div>${forecastIcon(forecastDay.weather[0].main)}</div>
+              <div class="expected-temp">
+            <span class="forecast-expected-temp-max"> ${Math.round(
+              forecastDay.temp.max
+            )}° </span>
+          <span class="forecast-expected-temp-min"> ${Math.round(
+            forecastDay.temp.min
+          )}° </span>
+              </div>
+            </div>
+  `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "8faf1e22ac6d107f05e8ab59a4150451";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displaySearchedTemp(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   celsiusTemperature = response.data.main.temp;
@@ -260,6 +326,8 @@ function displaySearchedTemp(response) {
   let weatherIcon = document.querySelector("#weather-emoji");
   weatherIcon.setAttribute("alt", weatherDescription);
   weatherIcon.setAttribute("src", showIcon());
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
