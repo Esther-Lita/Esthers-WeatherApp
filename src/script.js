@@ -312,9 +312,10 @@ function displaySearchedTemp(response) {
     Math.round(celsiusTemperature);
 
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
+
+  let windSpeed = response.data.wind.speed;
+  windSpeed = windSpeed * 3.6;
+  document.querySelector("#wind").innerHTML = Math.round(windSpeed);
   weatherDescription = response.data.weather[0].main;
   document.querySelector("#weather-conditions").innerHTML = weatherDescription;
   document.querySelector("#max-temp").innerHTML = Math.round(
