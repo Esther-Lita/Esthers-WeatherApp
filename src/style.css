@@ -63,9 +63,7 @@ h1,
 }
 
 .search-btn,
-.location-btn,
-.search-btn:hover,
-.location-btn:hover {
+.location-btn {
   display: inline-block;
   margin: 0;
   background: #34ace0;
@@ -79,6 +77,7 @@ h1,
 .location-btn:hover {
   cursor: pointer;
   background: #227093;
+  color: white;
 }
 
 .weather {
